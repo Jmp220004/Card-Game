@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TouchManager : MonoBehaviour
+public class TouchInput : MonoBehaviour
 {
-
     [SerializeField] private GameObject player;
     private PlayerInput playerInput;
 
     private InputAction touchPositionAction;
-    private InputAction touchPressAction;
+    private InputAction touchTapAction;
+    private InputAction touchHoldAction;
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        touchPressAction = playerInput.actions["TouchPress"];
         touchPositionAction = playerInput.actions["TouchPosition"];
+        touchTapAction = playerInput.actions["Tap"];
+        touchHoldAction = playerInput.actions["Hold"];
 
     }
 
     private void OnEnable()
     {
-        touchPressAction.performed += TouchPressed;
+        touchTapAction.performed += TouchPressed;
+        touchHoldAction.performed += TouchPressed;
     }
 
     private void OnDisable()
     {
-        touchPressAction.performed -= TouchPressed;
+        touchTapAction.performed -= TouchPressed;
+        touchHoldAction.performed -= TouchPressed;
     }
 
     private void TouchPressed(InputAction.CallbackContext context)
