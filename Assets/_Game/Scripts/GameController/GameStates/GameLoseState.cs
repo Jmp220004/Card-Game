@@ -20,6 +20,7 @@ public class GameLoseState : State
     public override void Enter()
     {
         base.Enter();
+        _controller.StateChange.Play();
         _controller.CurrentState.text = "Lose State";
     }
 

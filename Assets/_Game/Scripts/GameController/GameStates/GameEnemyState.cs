@@ -20,6 +20,7 @@ public class GameEnemyState : State
     public override void Enter()
     {
         base.Enter();
+        _controller.StateChange.Play();
         _controller.CurrentState.text = "Enemy Turn State";
         dead = _controller.PlayerUnitPrefab.TakeDamage(_controller.EnemyUnitPrefab.damage);
         Debug.Log("Player Health: " + _controller.PlayerUnitPrefab.currentHP);

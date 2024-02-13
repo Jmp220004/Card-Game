@@ -19,7 +19,7 @@ public class GameSetupState : State
     {
         // Start
         base.Enter();
-
+        _controller.StateChange.Play();
         Debug.Log("State: Game Setup");
         Debug.Log("Load Save Data");
         Debug.Log("Spawn Units");
@@ -39,6 +39,11 @@ public class GameSetupState : State
         _controller.PlayerUnitPrefab.currentHP = _controller.PlayerUnitPrefab.maxHP;
 
     }
+    IEnumerator Setup()
+    {
+        yield return new WaitForSeconds(2f);
+        _stateMachine.ChangeState(_stateMachine.PlayState);
+    }
 
     // Stop
     public override void Exit()
@@ -56,6 +61,6 @@ public class GameSetupState : State
     public override void Tick()
     {
         base.Tick();
-        _stateMachine.ChangeState(_stateMachine.PlayState);
+        _controller.StartCoroutine(Setup());    
     }
 }

@@ -19,7 +19,7 @@ public class GamePlayerState : State
     public override void Enter()
     {
         base.Enter();
-
+        _controller.StateChange.Play();
         Debug.Log("State: Game Play");
         Debug.Log("Display Player HUD");
         _controller.Attack.enabled = true;

@@ -7,7 +7,6 @@ public class GameWinState : State
 {
     private GameFSM _stateMachine;
     private GameController _controller;
-    AudioSource _audioSource;
 
     //this is our 'constructor', called when this state is created
     public GameWinState(GameFSM stateMachine, GameController controller)
@@ -22,6 +21,7 @@ public class GameWinState : State
     public override void Enter()
     {
         base.Enter();
+        _controller.StateChange.Play();
         _controller.CurrentState.text = "Win State";
         SceneManager.LoadScene("WinMenu");
     }

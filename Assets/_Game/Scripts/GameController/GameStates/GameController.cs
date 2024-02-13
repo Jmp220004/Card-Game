@@ -28,6 +28,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _attack;
     [SerializeField] private Button _heal;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _stateChange;
+
+
     public float TapLimitDuration => _tapLimitDuration;
 
     public Unit PlayerUnitPrefab => _playerUnitPrefab;
@@ -44,6 +48,8 @@ public class GameController : MonoBehaviour
     public HUD EnemyHUD => _enemyHUD;
     public Button Attack => _attack;
     public Button Heal => _heal;
+
+    public AudioSource StateChange => _stateChange;
 
 
 }
