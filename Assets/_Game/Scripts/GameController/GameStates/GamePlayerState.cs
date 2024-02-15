@@ -52,6 +52,7 @@ public class GamePlayerState : State
     {
         base.Exit();
         _controller.Attack.onClick.RemoveAllListeners();
+        _controller.Heal.onClick.RemoveAllListeners();
     }
 
     public override void FixedTick()

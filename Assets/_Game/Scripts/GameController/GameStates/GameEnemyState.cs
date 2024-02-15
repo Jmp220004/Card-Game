@@ -22,13 +22,19 @@ public class GameEnemyState : State
         base.Enter();
         _controller.StateChange.Play();
         _controller.CurrentState.text = "Enemy Turn State";
+        _controller.StartCoroutine(Fight());
+        
+    }
+    IEnumerator Fight()
+    {
+        yield return new WaitForSeconds(1f);
         dead = _controller.PlayerUnitPrefab.TakeDamage(_controller.EnemyUnitPrefab.damage);
         Debug.Log("Player Health: " + _controller.PlayerUnitPrefab.currentHP);
         _controller.PlayerHUD.SetHP(_controller.PlayerUnitPrefab.currentHP);
         enemyTurn = true;
     }
 
-    IEnumerator Fight()
+    IEnumerator Turn()
     {
         yield return new WaitForSeconds(1f);
         _stateMachine.ChangeState(_stateMachine.PlayState);
@@ -53,7 +59,7 @@ public class GameEnemyState : State
         }
         else if(!dead && enemyTurn)
         {
-            _controller.StartCoroutine(Fight());
+            _controller.StartCoroutine(Turn());
             enemyTurn = false;
         }
     }
