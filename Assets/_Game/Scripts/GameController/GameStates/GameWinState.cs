@@ -23,7 +23,7 @@ public class GameWinState : State
         base.Enter();
         _controller.StateChange.Play();
         _controller.CurrentState.text = "Win State";
-        SceneManager.LoadScene("WinMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 
     public override void Exit()

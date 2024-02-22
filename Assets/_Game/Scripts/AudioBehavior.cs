@@ -4,27 +4,13 @@ using UnityEngine;
 
 public class AudioBehavior : MonoBehaviour
 {
-    public static AudioBehavior instance;
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioClip background;
-
-
-    private void Awake()
+private void Awake()
     {
-        if(instance != null)
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
+        if(musicObj.Length > 1)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-    }
-
-    private void Start()
-    {
-        musicSource.clip = background;
-        musicSource.Play();
+        DontDestroyOnLoad(this.gameObject);
     }
 }

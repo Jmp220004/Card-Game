@@ -28,15 +28,19 @@ public class GameSetupState : State
             _controller.PlayerUnitSpawnLocation);
         _controller.Player.text = "Agent Player";
         _controller.PlayerHUD.SetHUD(_controller.PlayerUnitPrefab);
+        
 
         //Enemy
         _controller.UnitSpawner.Spawn(_controller.EnemyUnitPrefab,
             _controller.EnemyUnitSpawnLocation);
-        _controller.Enemy.text = "Cheeseburger";
+        _controller.Enemy.text = _controller.EnemyUnitPrefab.unitName;
         _controller.EnemyHUD.SetHUD(_controller.EnemyUnitPrefab);
 
         _controller.EnemyUnitPrefab.currentHP = _controller.EnemyUnitPrefab.maxHP;
         _controller.PlayerUnitPrefab.currentHP = _controller.PlayerUnitPrefab.maxHP;
+
+        //Dialogue
+        _controller.Dialogue.text = "A Sentient " + _controller.Enemy.text + " appears...";
 
     }
     IEnumerator Setup()

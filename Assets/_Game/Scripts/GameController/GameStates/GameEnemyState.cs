@@ -31,6 +31,7 @@ public class GameEnemyState : State
         dead = _controller.PlayerUnitPrefab.TakeDamage(_controller.EnemyUnitPrefab.damage);
         Debug.Log("Player Health: " + _controller.PlayerUnitPrefab.currentHP);
         _controller.PlayerHUD.SetHP(_controller.PlayerUnitPrefab.currentHP);
+        _controller.Dialogue.text = _controller.EnemyUnitPrefab.unitName + " attacks Player!";
         enemyTurn = true;
     }
 
@@ -55,6 +56,7 @@ public class GameEnemyState : State
         if (dead)
         {
             Debug.Log("You Lose!");
+            _controller.Dialogue.text = "You Lost...";
             _stateMachine.ChangeState(_stateMachine.LoseState);
         }
         else if(!dead && enemyTurn)

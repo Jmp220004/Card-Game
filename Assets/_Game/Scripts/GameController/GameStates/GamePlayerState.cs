@@ -20,6 +20,7 @@ public class GamePlayerState : State
     {
         base.Enter();
         _controller.StateChange.Play();
+        _controller.Dialogue.text = "Chose an action:";
         Debug.Log("State: Game Play");
         Debug.Log("Display Player HUD");
         _controller.Attack.enabled = true;
@@ -35,6 +36,7 @@ public class GamePlayerState : State
         {
             dead = _controller.EnemyUnitPrefab.TakeDamage(_controller.PlayerUnitPrefab.damage);
             _controller.EnemyHUD.SetHP(_controller.EnemyUnitPrefab.currentHP);
+            _controller.Dialogue.text = "Player Attacks!";
             Debug.Log("Enemy Health: " + _controller.EnemyUnitPrefab.currentHP);
             playerTurn = true;
         }
@@ -45,6 +47,7 @@ public class GamePlayerState : State
     {
         _controller.PlayerUnitPrefab.Heal(5);
         _controller.PlayerHUD.SetHP(_controller.PlayerUnitPrefab.currentHP);
+        _controller.Dialogue.text = "Player Heals!";
         playerTurn = true;
     }
 
@@ -67,6 +70,7 @@ public class GamePlayerState : State
         if (dead)
         {
             Debug.Log("You Win!");
+            _controller.Dialogue.text = "You won the battle";
             _controller.Attack.enabled = false;
             _controller.Heal.enabled = false;
             _stateMachine.ChangeState(_stateMachine.WinState);

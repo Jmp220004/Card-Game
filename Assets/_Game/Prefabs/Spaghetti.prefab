@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4082437635477783565}
   - component: {fileID: 3638813895125049103}
+  - component: {fileID: 6794003277981891402}
   m_Layer: 0
-  m_Name: PlayerUnit
+  m_Name: Spaghetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,15 +25,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2461530932056005665}
-  m_LocalRotation: {x: -0, y: -0, z: -0.041339967, w: 0.99914515}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.540484, y: 9.271693, z: 1.2828}
+  m_LocalScale: {x: 57.849293, y: 82.006294, z: 11.346113}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8228380748320094879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3638813895125049103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,11 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f26d1e0f8d656b458bf77a023351f88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Spaghetti
   damage: 5
-  maxHP: 50
-  currentHP: 50
+  maxHP: 30
+  currentHP: 30
   dead: 0
+--- !u!114 &6794003277981891402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461530932056005665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c005f4ac4d6854c82b8944b0d75736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hPBar: {fileID: 0}
 --- !u!1 &4065550329200914632
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,8 +89,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4065550329200914632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14426783, y: 0.09868835, z: 0.2515972}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.010831103, y: 0.007409162, z: 0.018889}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8228380748320094879}
@@ -123,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c4fd852232297c47a4f6afb8c92360e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eaa093948146cd4e992bfd567bd3526, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

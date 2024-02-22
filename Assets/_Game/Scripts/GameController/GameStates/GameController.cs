@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private HUD _enemyHUD;
     [SerializeField] private TMP_Text _enemy;
 
+    [SerializeField] private TMP_Text _dialogue;
     [SerializeField] private Button _attack;
     [SerializeField] private Button _heal;
 
@@ -45,6 +46,7 @@ public class GameController : MonoBehaviour
     public TMP_Text Player => _player;
     public HUD PlayerHUD => _playerHUD;
     public TMP_Text Enemy => _enemy;
+    public TMP_Text Dialogue => _dialogue;
     public HUD EnemyHUD => _enemyHUD;
     public Button Attack => _attack;
     public Button Heal => _heal;
