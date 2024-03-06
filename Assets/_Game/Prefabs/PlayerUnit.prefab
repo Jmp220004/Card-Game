@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: 
-  damage: 5
+  damage: 10
   maxHP: 50
   currentHP: 50
   dead: 0

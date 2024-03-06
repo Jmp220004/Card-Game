@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: IceCream
-  damage: 5
-  maxHP: 30
-  currentHP: 30
+  damage: 10
+  maxHP: 50
+  currentHP: 50
   dead: 0
 --- !u!114 &6794003277981891402
 MonoBehaviour:

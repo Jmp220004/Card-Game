@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Spaghetti
-  damage: 5
-  maxHP: 30
-  currentHP: 30
+  damage: 10
+  maxHP: 60
+  currentHP: 60
   dead: 0
 --- !u!114 &6794003277981891402
 MonoBehaviour:

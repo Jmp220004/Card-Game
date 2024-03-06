@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _stateChange;
+    [SerializeField] private AudioSource _damage;
+    [SerializeField] private AudioSource _healSound;
 
 
     public float TapLimitDuration => _tapLimitDuration;
@@ -52,6 +54,6 @@ public class GameController : MonoBehaviour
     public Button Heal => _heal;
 
     public AudioSource StateChange => _stateChange;
-
-
+    public AudioSource Damage => _damage;
+    public AudioSource HealSound => _healSound; 
 }

@@ -38,6 +38,7 @@ public class GamePlayerState : State
             _controller.EnemyHUD.SetHP(_controller.EnemyUnitPrefab.currentHP);
             _controller.Dialogue.text = "Player Attacks!";
             Debug.Log("Enemy Health: " + _controller.EnemyUnitPrefab.currentHP);
+            _controller.Damage.Play();
             playerTurn = true;
         }
 
@@ -48,6 +49,7 @@ public class GamePlayerState : State
         _controller.PlayerUnitPrefab.Heal(5);
         _controller.PlayerHUD.SetHP(_controller.PlayerUnitPrefab.currentHP);
         _controller.Dialogue.text = "Player Heals!";
+        _controller.HealSound.Play();
         playerTurn = true;
     }
 
